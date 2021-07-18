@@ -5,7 +5,6 @@ pipeline {
         CREDENTIALS_ID ='srini-sandbox-env'
         BUCKET = 'jenkins-training'
         PATTERN = 'build/*'
-        STRIP_PATH = 'build/'
     }
 
     tools {
@@ -44,8 +43,7 @@ pipeline {
                 step([$class: 'ClassicUploadStep',
                     credentialsId: env.CREDENTIALS_ID, 
                     bucket: "gs://${env.BUCKET}",
-                    pattern: env.PATTERN,
-                    stripPathPrefix: env.STRIP_PATH])
+                    pattern: env.PATTERN])
             }
         }
     }
