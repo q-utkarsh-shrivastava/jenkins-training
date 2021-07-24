@@ -1,14 +1,16 @@
 pipeline {
-    agent any;
+    agent {
+        label 'jenkins-cloud-gcp'
+    }
 
     environment {
-        CREDENTIALS_ID ='srini-sandbox-env'
-        BUCKET = 'jenkins-training'
+        CREDENTIALS_ID ='srinibasmisra-gcp-trials-01'
+        BUCKET = 'srinibasmisra-gcp-trials-01-jenkins-training'
         PATTERN = 'build/*'
     }
 
     tools {
-        nodejs 'jenkins-demo-node'
+        nodejs 'node-tool'
     }
 
     stages {
