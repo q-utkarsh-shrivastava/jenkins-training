@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'jenkins-cloud-gcp'
+        label 'jenkins-agent1'
     }
 
     environment {
